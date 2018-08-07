@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="app.css" />
+</head>
+
+<body>
+    <div class="calculator">
+        <h1 class="title" >Calculator</h1>
+        <div class="screan">
+            <input class="screan_input" id="screan_input">
+        </div>
+        <div class="button_div">
+            <button class="clear-button" value="clear" onclick="clean()">C</button>
+            <button class="clear-button" value="memory" onclick="clean()">M</button>
+            <button class="negative-button" value="negative">&plusmn;</button>
+            <button class="percent-button" value="percent" id="percent-button">&#37;</button>
+            
+            <button class="number-button" value="7" onclick="number(7)">7</button>
+            <button class="number-button" value="8" onclick="number(8)">8</button>
+            <button class="number-button" value="9" onclick="number(9)">9</button>
+            <button class="operator-button divide-button" value="/" onclick="oparation('/')">&divide;</button>
+            <button class="number-button" value="4" onclick="number(4)">4</button>
+            <button class="number-button" value="5" onclick="number(5)">5</button>
+            <button class="number-button" value="6" onclick="number(6)">6</button>
+            <button class="operator-button multiply-button" value="*" onclick="oparation('*')">&times;</button>
+            <button class="number-button" value="1" onclick="number(1)">1</button>
+            <button class="number-button" value="2" onclick="number(2)">2</button>
+            <button class="number-button" value="3" onclick="number(3)">3</button>
+            <button class="operator-button subtract-button" value="-" onclick="oparation('-')">&minus;</button>
+            <button class="number-button" value="0" onclick="number(0)">0</button>
+            <button class="number-button decimal-button" value="." onclick="number('.')">.</button>
+            <button class="equals-button" value="equals" onclick="equal()">=</button>
+            <button class="operator-button plus-button" value="+" onclick="oparation('+')">+</button>
+        </div>
+    </div>
+
+<script src="app.js"></script>
+</body>
+
+</html>
