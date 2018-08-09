@@ -19,7 +19,7 @@ background-color:rgba(255, 255, 255, 0.815);
 .calculator
 {
     margin: 30px auto 20px auto;
-	padding: 10px 10px 0 10px;
+	padding: 5px;
 	max-width: 300px;
 	height: 500px;
 	border: 1px solid #063ef5;
@@ -61,7 +61,7 @@ background-color:rgba(255, 255, 255, 0.815);
 }
 
 .button_div{
-	margin-top: 110px;
+	margin-top: 100px;
 }
 
 button
@@ -71,7 +71,6 @@ button
     margin: 0px 0px 5px 5px;
 }
 
-.number-button,
 .operator-button,
 .percent-button,
 .clear-button,
@@ -79,7 +78,34 @@ button
 .negative-button {
 	width: 23%;
 	height: 10%;
-	background-color: rgba(180, 176, 176, 0.288);
+	background-color: rgba(180, 176, 176, 0.521);
+	color: black;
+	font-size: 1.3em;
+	font-family: sans-serif;
+}
+
+.number-button{
+	width: 23%;
+	height: 10%;
+	background-color: rgba(180, 176, 176, 0.171);
 	color: black;
 	font-size: 1.5em;
+	font-weight: bold;
 }
+
+.memory-button{
+	width: 18%;
+	color: black;
+	font-size: 0.9em;
+	font-family: sans-serif;
+}
+
+.disable-memory-button{
+	width: 18%;
+	color: rgba(128, 128, 128, 0.658);
+	font-size: 0.9em;
+	font-family: sans-serif;
+}
+
+
+

@@ -7,16 +7,21 @@
 
 <body>
     <div class="calculator">
-        <h1 class="title" >Calculator</h1>
+        <h1 class="title">Calculator</h1>
         <div class="screan">
             <input class="screan_input" id="screan_input">
         </div>
         <div class="button_div">
+            <button class="disable-memory-button" id="memory_clean" onclick="memoryClean()">MC</button>
+            <button class="disable-memory-button" id="memory_read" onclick="memoryRead()">MR</button>
+            <button class="memory-button" id="memory_add" onclick="memoryAdd()">M+</button>
+            <button class="memory-button" id="memory_minus" onclick="memoryMinus()">M-</button>
+            <button class="memory-button" value="memory_stone" onclick="memoryStore()">MS</button>
+            <button class="clear-button" value="clear" onclick="clean()">CE</button>
             <button class="clear-button" value="clear" onclick="clean()">C</button>
-            <button class="clear-button" value="memory" onclick="clean()">M</button>
             <button class="negative-button" value="negative">&plusmn;</button>
-            <button class="percent-button" value="percent" id="percent-button">&#37;</button>
-            
+            <button class="percent-button" value="percent" id="percent-button" onclick="oparation('%')">&#37;</button>
+
             <button class="number-button" value="7" onclick="number(7)">7</button>
             <button class="number-button" value="8" onclick="number(8)">8</button>
             <button class="number-button" value="9" onclick="number(9)">9</button>
@@ -36,7 +41,7 @@
         </div>
     </div>
 
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
