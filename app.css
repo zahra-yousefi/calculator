@@ -71,11 +71,7 @@ button
     margin: 0px 0px 5px 5px;
 }
 
-.operator-button,
-.percent-button,
-.clear-button,
-.equals-button,
-.negative-button {
+.operator-button {
 	width: 23%;
 	height: 10%;
 	background-color: rgba(180, 176, 176, 0.521);
@@ -84,7 +80,12 @@ button
 	font-family: sans-serif;
 }
 
-.number-button{
+.operator-button:hover {
+	background-color: rgba(180, 176, 176, 0.171);
+	border: 2px solid rgba(180, 176, 176, 0.521)
+	}
+
+.number-button {
 	width: 23%;
 	height: 10%;
 	background-color: rgba(180, 176, 176, 0.171);
@@ -92,6 +93,11 @@ button
 	font-size: 1.5em;
 	font-weight: bold;
 }
+
+.number-button:hover {
+	background-color: rgba(180, 176, 176, 0.521);
+	border: 2px solid rgba(180, 176, 176, 0.521);				
+  }
 
 .memory-button{
 	width: 18%;
@@ -106,6 +112,16 @@ button
 	font-size: 0.9em;
 	font-family: sans-serif;
 }
+
+.disable-memory-button:hover {
+	font-weight: bold;
+}
+
+.memory-button:hover {
+	font-weight: bold;
+}
+
+
 
 
 
