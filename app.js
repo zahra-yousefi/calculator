@@ -60,16 +60,16 @@ function equal() {
     }
     switch (operator) {
         case '+':
-            screen.innerHTML = ((+operand1) + (+operand2)).toFixed(1);
+            screen.innerHTML = (+operand1) + (+operand2);
             break;
         case '-':
-            screen.innerHTML = ((+operand1) - (+operand2)).toFixed(1);
+            screen.innerHTML = (+operand1) - (+operand2);
             break;
         case '*':
-            screen.innerHTML = ((+operand1) * (+operand2)).toFixed(1);
+            screen.innerHTML = (+operand1) * (+operand2);
             break;
         case '/':
-            screen.innerHTML = ((+operand1) / (+operand2)).toFixed(1);
+            screen.innerHTML = (+operand1) / (+operand2);
     }
     operand1 = ' ';
     state = 2;
