@@ -1,55 +1,73 @@
-var input = document.getElementById('screan_input'),
+window.addEventListener("keypress", checkKeyPress, false);
+function checkKeyPress(e) {
+    if (e.keyCode >= 48 && e.keyCode <= 57) {
+        return number(+e.key);
+    }
+    if (e.keyCode >= 42 && e.keyCode <= 47) {
+        return oparation(e.key);
+    }
+    if (e.keyCode == 13) {
+        return equal();
+    }
+}
+
+var screen = document.getElementById('screan_input'),
     flag, operator, operand1, operand2, memory;
 var memoryReadButton = document.getElementById('memory_read');
 var memoryCleanButton = document.getElementById('memory_clean');
 
+
 function number(value) {
+    focus();
     if (flag) {
-        input.value = '';
+        screen.innerHTML = '';
         flag = false;
     }
     if (value === '.') {
-        if (input.value) {
-            input.value += value;
+        if (screen.innerHTML) {
+            screen.innerHTML += value;
         } else {
-            input.value += '0' + value;
+            screen.innerHTML += '0' + value;
         }
-    } else if (input.value === '0') {
-        input.value = value;
+    } else if (screen.innerHTML === '0') {
+        screen.innerHTML = value;
     } else {
-        input.value += value;
+        screen.innerHTML += value;
     }
 }
 
 function oparation(op) {
+    focus();
     if (operand1) {
         equal();
     }
-    operand1 = input.value;
+    operand1 = screen.innerHTML;
     operator = op;
     flag = true;
 }
 
 function equal() {
-    operand2 = input.value;
+    focus();
+    operand2 = screen.innerHTML;
     switch (operator) {
         case '+':
-            input.value = (+operand1) + (+operand2);
+            screen.innerHTML = (+operand1) + (+operand2);
             break;
         case '-':
-            input.value = (+operand1) - (+operand2);
+            screen.innerHTML = (+operand1) - (+operand2);
             break;
         case '*':
-            input.value = (+operand1) * (+operand2);
+            screen.innerHTML = (+operand1) * (+operand2);
             break;
         case '/':
-            input.value = (+operand1) / (+operand2);
+            screen.innerHTML = (+operand1) / (+operand2);
     }
-    operand1 = '';
+    operand1 = ' ';
 }
 
 function clean() {
-    input.value = '';
+    focus();
+    screen.innerHTML = 0;
     operand1 = '';
     operand2 = '';
     operator = '';
@@ -57,23 +75,27 @@ function clean() {
 }
 
 function point(value) {
+    focus();
     if (operand1) {
-        input.value += value;
+        screen.innerHTML += value;
     } else {
-        input.value += '0' + value;
+        screen.innerHTML += '0' + value;
     }
 }
 
 function memoryStore() {
-    store(+input.value);
+    focus();
+    store(+screen.innerHTML);
 }
 
 function memoryRead() {
+    focus();
     if (memory === undefined) return;
-    input.value = memory;
+    screen.innerHTML = memory;
 }
 
 function memoryClean() {
+    focus();
     if (memory === undefined) return;
     memory = undefined;
     memoryReadButton.className = 'disable-memory-button';
@@ -82,15 +104,33 @@ function memoryClean() {
 }
 
 function memoryAdd() {
-    store((memory || 0) + (+input.value));
+    focus();
+    store((memory || 0) + (+screen.innerHTML));
 }
 
 function memoryMinus() {
-    store((memory || 0) - (+input.value));
+    focus();
+    store((memory || 0) - (+screen.innerHTML));
 }
+
+function negetive() {
+    focus();
+    screen.innerHTML = -(+screen.innerHTML);
+}
+
+function percent() {
+    focus();
+    screen.innerHTML = operand1 * screen.innerHTML / 100;
+}
+
+// ==========================================================================
 
 function store(value) {
     memoryReadButton.className = 'memory-button';
     memoryCleanButton.className = 'memory-button';
     memory = value;
+}
+
+function focus() {
+    document.activeElement.blur()
 }

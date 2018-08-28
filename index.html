@@ -9,7 +9,7 @@
     <div class="calculator">
         <h1 class="title">Calculator</h1>
         <div class="screan">
-            <input class="screan_input" id="screan_input">
+            <div class="screan_input" id="screan_input">0</div>
         </div>
         <div class="button_div">
             <button class="disable-memory-button" id="memory_clean" onclick="memoryClean()">MC</button>
@@ -19,8 +19,8 @@
             <button class="memory-button" value="memory_stone" onclick="memoryStore()">MS</button>
             <button class="operator-button" value="clear" onclick="clean()">CE</button>
             <button class="operator-button" value="clear" onclick="clean()">C</button>
-            <button class="operator-button" value="negative">&plusmn;</button>
-            <button class="operator-button" value="percent" id="percent-button" onclick="oparation('%')">&#37;</button>
+            <button class="operator-button" value="negative" onclick="negetive()">&plusmn;</button>
+            <button class="operator-button" value="percent" id="percent-button" onclick="percent()">&#37;</button>
 
             <button class="number-button" value="7" onclick="number(7)">7</button>
             <button class="number-button" value="8" onclick="number(8)">8</button>
