@@ -12,13 +12,16 @@ function checkKeyPress(e) {
 }
 
 var screen = document.getElementById('screan_input'),
-    flag, operator, operand1, operand2, memory;
+    flag, operator, operand1, operand2, memory, state;
 var memoryReadButton = document.getElementById('memory_read');
 var memoryCleanButton = document.getElementById('memory_clean');
 
 
 function number(value) {
     focus();
+    if (state == 2) {
+        screen.innerHTML = '';
+    }
     if (flag) {
         screen.innerHTML = '';
         flag = false;
@@ -34,35 +37,42 @@ function number(value) {
     } else {
         screen.innerHTML += value;
     }
+
 }
 
 function oparation(op) {
     focus();
-    if (operand1) {
+    if (state == 1) {
         equal();
     }
     operand1 = screen.innerHTML;
     operator = op;
     flag = true;
+    state = 1;
 }
 
 function equal() {
     focus();
-    operand2 = screen.innerHTML;
+    if (state == 2) {
+        operand1 = screen.innerHTML;
+    } else {
+        operand2 = screen.innerHTML;
+    }
     switch (operator) {
         case '+':
-            screen.innerHTML = (+operand1) + (+operand2);
+            screen.innerHTML = ((+operand1) + (+operand2)).toFixed(1);
             break;
         case '-':
-            screen.innerHTML = (+operand1) - (+operand2);
+            screen.innerHTML = ((+operand1) - (+operand2)).toFixed(1);
             break;
         case '*':
-            screen.innerHTML = (+operand1) * (+operand2);
+            screen.innerHTML = ((+operand1) * (+operand2)).toFixed(1);
             break;
         case '/':
-            screen.innerHTML = (+operand1) / (+operand2);
+            screen.innerHTML = ((+operand1) / (+operand2)).toFixed(1);
     }
     operand1 = ' ';
+    state = 2;
 }
 
 function clean() {
